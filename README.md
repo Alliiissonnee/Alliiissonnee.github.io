@@ -1,6 +1,6 @@
 # Portfolio · Alison Faidherbe
 
-Mon portfolio de développeuse web fullstack junior : mon parcours, mes projets et un formulaire pour me contacter.
+Mon portfolio de développeur web fullstack junior : mon parcours, mes projets et un formulaire pour me contacter.
 
 **Voir le site :** https://alliiissonnee.github.io/
 
