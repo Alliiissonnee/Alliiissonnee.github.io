@@ -59,5 +59,5 @@ Aucune installation n'est nécessaire : ouvrez `index.html` dans un navigateur.
 
 ## Contact
 
-- [LinkedIn](https://www.linkedin.com/in/alison-faidherbe-816425339)
+- [LinkedIn](https://www.linkedin.com/in/alliiissonnee)
 - [GitHub](https://github.com/Alliiissonnee)
