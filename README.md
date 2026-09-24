@@ -1,10 +1,8 @@
 # Portfolio · Alison Faidherbe
 
+**🔗 [alliiissonnee.github.io](https://alliiissonnee.github.io/)**
+
 Mon portfolio de développeur web fullstack junior : mon parcours, mes projets et un formulaire pour me contacter.
-
-**Voir le site :** https://alliiissonnee.github.io/
-
-![Page d'accueil du portfolio](captures/accueil.png)
 
 ## Le site
 
@@ -15,13 +13,18 @@ Mon portfolio de développeur web fullstack junior : mon parcours, mes projets e
 
 Le site est disponible en **français, anglais et indonésien**. La langue suit celle du navigateur, et le CV téléchargé est dans la langue choisie.
 
-| Projets | À propos |
-| --- | --- |
-| ![Page projets](captures/projets.png) | ![Page à propos](captures/a-propos.png) |
+## Aperçu
 
-### Sur mobile
+| Accueil | Projets | À propos |
+| --- | --- | --- |
+| ![Page d'accueil](captures/accueil.png) | ![Page projets](captures/projets.png) | ![Page à propos](captures/a-propos.png) |
+
+<details>
+<summary>Voir le site sur mobile</summary>
 
 ![Le site sur téléphone](captures/mobile.png)
+
+</details>
 
 ## Technologies
 
