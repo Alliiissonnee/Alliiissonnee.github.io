@@ -955,6 +955,16 @@ a {
     display: block;
   }
 
+  /* Pied de page : réseaux sociaux au-dessus du copyright */
+  .pied {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reseaux {
+    order: -1;
+  }
+
   .menu ul {
     flex-direction: column;
     align-items: flex-start;
