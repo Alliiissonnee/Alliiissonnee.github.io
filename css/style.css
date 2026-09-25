@@ -16,6 +16,38 @@
 
   --rayon: 14px;
   --espace: 1rem;
+
+  color-scheme: light;
+}
+
+/* Mode sombre : mêmes variables, couleurs inversées.
+   Automatique selon l'appareil, sauf si le visiteur a choisi avec le bouton. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --creme: #1c1719;
+    --blanc: #2a2326;
+    --rose-clair: #3b2b31;
+    --rose-survol: #4a3640;
+    --vieux-rose: #6b4550;
+    --fleur: #f0a3b2;
+    --marine: #f4e9ec;
+    --ardoise: #b9adb2;
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --creme: #1c1719;
+  --blanc: #2a2326;
+  --rose-clair: #3b2b31;
+  --rose-survol: #4a3640;
+  --vieux-rose: #6b4550;
+  --fleur: #f0a3b2;
+  --marine: #f4e9ec;
+  --ardoise: #b9adb2;
+
+  color-scheme: dark;
 }
 
 /* ==========================================================
@@ -176,6 +208,57 @@ a {
   white-space: nowrap;
 }
 
+/* Le renard est bleu marine : on l'éclaircit en mode sombre */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo__renard {
+    filter: invert(1) brightness(1.1);
+  }
+}
+
+:root[data-theme="dark"] .logo__renard {
+  filter: invert(1) brightness(1.1);
+}
+
+/* Bouton mode sombre : icône seule sur ordinateur, avec texte dans le menu mobile */
+.theme {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.theme .icone {
+  width: 20px;
+  height: 20px;
+}
+
+/* On affiche l'icône et le texte du mode vers lequel on peut passer */
+.theme__soleil,
+.theme [data-i18n="theme.clair"],
+.theme[data-sombre="true"] .theme__lune,
+.theme[data-sombre="true"] [data-i18n="theme.sombre"] {
+  display: none;
+}
+
+.theme[data-sombre="true"] .theme__soleil,
+.theme[data-sombre="true"] [data-i18n="theme.clair"] {
+  display: block;
+}
+
+.theme__texte {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 /* Allura est petite : "Alison" est agrandi, "FAIDHERBE" garde sa taille */
 .logo strong {
   font-family: var(--police);
@@ -188,6 +271,7 @@ a {
 
 .menu ul {
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -873,7 +957,16 @@ a {
 
   .menu ul {
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.75rem;
+  }
+
+  .theme__texte {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
   }
 
   .grille-accueil {

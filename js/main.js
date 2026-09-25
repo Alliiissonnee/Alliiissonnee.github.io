@@ -94,6 +94,35 @@ burger.addEventListener("click", () => {
 });
 
 // ==========================================================
+// Bouton mode sombre
+// ==========================================================
+const boutonTheme = document.querySelector(".theme");
+const systemeSombre = window.matchMedia("(prefers-color-scheme: dark)");
+
+function themeActuel() {
+  return document.documentElement.dataset.theme || (systemeSombre.matches ? "dark" : "light");
+}
+
+function majBoutonTheme() {
+  boutonTheme.dataset.sombre = themeActuel() === "dark";
+}
+
+boutonTheme.addEventListener("click", () => {
+  const nouveau = themeActuel() === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = nouveau;
+  try {
+    localStorage.setItem("theme", nouveau);
+  } catch {
+    // pas grave si le choix n'est pas mémorisé
+  }
+  majBoutonTheme();
+});
+
+// Si le visiteur change le réglage de son appareil pendant la visite
+systemeSombre.addEventListener("change", majBoutonTheme);
+majBoutonTheme();
+
+// ==========================================================
 // Carrousels de la page projets
 // ==========================================================
 document.querySelectorAll(".carrousel").forEach((carrousel) => {
