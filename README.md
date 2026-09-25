@@ -29,12 +29,13 @@ Le site est disponible en **français, anglais et indonésien**. La langue suit 
 ## Technologies
 
 - HTML5 et CSS3 (Grid, Flexbox, media queries), sans framework
-- JavaScript natif : traduction FR / EN / ID, menu burger, galeries avec flèches
+- JavaScript natif : traduction FR / EN / ID, mode sombre, menu burger, galeries avec flèches
 - Maquette conçue sur Figma
 
 ## Points soignés
 
 - **Responsive** : ordinateur, tablette et téléphone
+- **Mode sombre** : automatique selon l'appareil, avec un bouton pour choisir
 - **Accessibilité** : textes alternatifs, navigation au clavier, libellés pour les lecteurs d'écran, respect du réglage « réduire les animations »
 - **Sécurité** : Content Security Policy, liens externes protégés, champ anti-spam sur le formulaire
 
