@@ -2,7 +2,7 @@
 
 **🔗 [alliiissonnee.github.io](https://alliiissonnee.github.io/)**
 
-Mon portfolio de développeur web fullstack junior : mon parcours, mes projets et un formulaire pour me contacter.
+Mon portfolio de développeur web fullstack en formation : mon parcours, mes projets et un formulaire pour me contacter.
 
 ## Le site
 
