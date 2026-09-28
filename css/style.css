@@ -587,6 +587,13 @@ a {
   color: var(--marine);
 }
 
+/* Technologies du projet (ex. WordPress · WooCommerce) */
+.projet__techno {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ardoise);
+}
+
 /* Étiquette "Projet en cours" */
 .projet__statut {
   width: fit-content;
