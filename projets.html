@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=2026-09-27">
+  <link rel="stylesheet" href="css/style.css?v=2026-09-29">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <script src="js/theme.js?v=2026-09-27"></script>
-  <script src="js/traductions.js?v=2026-09-27" defer></script>
-  <script src="js/main.js?v=2026-09-27" defer></script>
+  <script src="js/theme.js?v=2026-09-29"></script>
+  <script src="js/traductions.js?v=2026-09-29" defer></script>
+  <script src="js/main.js?v=2026-09-29" defer></script>
 </head>
 <body>
 
@@ -58,8 +58,8 @@
         <ul class="carte carte--rose projet__galerie" aria-label="Captures d'écran de Foorthune" data-i18n-attr="aria-label:foorthune.galerie">
           <li><img src="assets/images/foorthune-1.jpg" alt="Page d'accueil de Foorthune avec les collections Marseille, Paris et Nice" data-i18n-attr="alt:foorthune.accueil"></li>
           <li><img src="assets/images/foorthune-2.jpg" alt="Portefeuilles de la collection Marseille en vente sur Foorthune" data-i18n-attr="alt:foorthune.produits"></li>
-          <li><img src="assets/images/foorthune-3.jpg" alt="Page de la collection Marseille sur Foorthune" data-i18n-attr="alt:foorthune.collection"></li>
-          <li><img src="assets/images/foorthune-4.jpg" alt="Page Notre histoire de Foorthune" data-i18n-attr="alt:foorthune.histoire"></li>
+          <li><img src="assets/images/foorthune-3.jpg" alt="Page Le Tyvek de Foorthune, qui présente la matière des portefeuilles" data-i18n-attr="alt:foorthune.tyvek"></li>
+          <li><img src="assets/images/foorthune-4.jpg" alt="Page de la collection Marseille sur Foorthune" data-i18n-attr="alt:foorthune.collection"></li>
         </ul>
         <button class="carrousel__fleche carrousel__fleche--precedent" type="button" disabled aria-label="Capture précédente" data-i18n-attr="aria-label:galerie.precedent">
           <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
@@ -68,6 +68,17 @@
           <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
+    </article>
+
+    <article class="projet projet--inverse" id="ecf">
+      <header class="carte carte--vieux-rose projet__infos">
+        <p class="projet__type" data-i18n="projet.perso">Projet personnel</p>
+        <h2>ECF</h2>
+        <a class="projet__lien" href="https://github.com/Alliiissonnee/ECF" target="_blank" rel="noopener" data-i18n="projet.visualiser">Cliquez ici pour visualiser le projet</a>
+      </header>
+      <figure class="carte projet__apercu">
+        <img src="assets/images/bibliotheque.png" alt="Capture d'écran de l'ECF : application Ma Bibliothèque" data-i18n-attr="alt:ecf.capture">
+      </figure>
     </article>
 
     <article class="projet" id="cabron">
@@ -93,14 +104,14 @@
       </div>
     </article>
 
-    <article class="projet projet--inverse" id="ecf">
+    <article class="projet projet--inverse" id="floppy-perroquet">
       <header class="carte carte--vieux-rose projet__infos">
         <p class="projet__type" data-i18n="projet.perso">Projet personnel</p>
-        <h2>ECF</h2>
-        <a class="projet__lien" href="https://github.com/Alliiissonnee/ECF" target="_blank" rel="noopener" data-i18n="projet.visualiser">Cliquez ici pour visualiser le projet</a>
+        <h2>Floppy Perroquet</h2>
+        <a class="projet__lien" href="https://alliiissonnee.github.io/Floppy-Perroquet-/" target="_blank" rel="noopener" data-i18n="projet.jouer">Cliquez ici pour jouer</a>
       </header>
-      <figure class="carte projet__apercu">
-        <img src="assets/images/bibliotheque.png" alt="Capture d'écran de l'ECF : application Ma Bibliothèque" data-i18n-attr="alt:ecf.capture">
+      <figure class="carte projet__apercu projet__apercu--portrait">
+        <img src="assets/images/floppy-1.png" alt="Écran d'accueil du jeu Floppy Perroquet" data-i18n-attr="alt:floppy.capture">
       </figure>
     </article>
 
@@ -124,17 +135,6 @@
           <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
-    </article>
-
-    <article class="projet projet--inverse" id="floppy-perroquet">
-      <header class="carte carte--vieux-rose projet__infos">
-        <p class="projet__type" data-i18n="projet.perso">Projet personnel</p>
-        <h2>Floppy Perroquet</h2>
-        <a class="projet__lien" href="https://alliiissonnee.github.io/Floppy-Perroquet-/" target="_blank" rel="noopener" data-i18n="projet.jouer">Cliquez ici pour jouer</a>
-      </header>
-      <figure class="carte projet__apercu projet__apercu--portrait">
-        <img src="assets/images/floppy-1.png" alt="Écran d'accueil du jeu Floppy Perroquet" data-i18n-attr="alt:floppy.capture">
-      </figure>
     </article>
 
   </main>
