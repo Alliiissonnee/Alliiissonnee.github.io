@@ -591,6 +591,19 @@ a {
   color: var(--ardoise);
 }
 
+/* Courte description du projet */
+.projet__description {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ardoise);
+}
+
+.projet--inverse .projet__description {
+  max-width: 40ch;
+  color: var(--marine);
+}
+
 /* Étiquette "Projet en cours" */
 .projet__statut {
   width: fit-content;
