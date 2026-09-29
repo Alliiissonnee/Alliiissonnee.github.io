@@ -656,8 +656,9 @@ a {
   scroll-padding: 1.5rem;
 }
 
+/* Une capture à la fois, sur toute la largeur : les flèches font défiler */
 .projet__galerie li {
-  flex: 0 0 80%;
+  flex: 0 0 100%;
   scroll-snap-align: start;
 }
 
@@ -678,6 +679,7 @@ a {
 
 .carrousel .projet__galerie {
   height: 100%;
+  gap: 1.5rem; /* = marge de la carte : la capture suivante reste cachée */
   scroll-behavior: smooth;
 }
 
