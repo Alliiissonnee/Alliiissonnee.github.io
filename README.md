@@ -7,7 +7,7 @@ Mon portfolio de développeur web fullstack en formation : mon parcours, mes pro
 ## Le site
 
 - **Accueil** : présentation, aperçu des projets et des compétences
-- **Projets** : mes projets avec galeries de captures et liens vers le code
+- **Projets** : mes projets de stage, de formation et personnels, chacun avec une courte description, une galerie de captures et le lien vers le site ou le code
 - **À propos** : mon parcours, de maître de chien dans l'Armée de Terre au développement web, et mon CV à télécharger
 - **Contact** : formulaire envoyé via [Formspree](https://formspree.io)
 
@@ -48,10 +48,12 @@ Le site est disponible en **français, anglais et indonésien**. La langue suit 
 ├── contact.html        Contact
 ├── css/style.css
 ├── js/
-│   ├── main.js         Traduction, menu, galeries
+│   ├── theme.js        Applique le mode sombre avant l'affichage de la page
+│   ├── main.js         Traduction, mode sombre, menu, galeries
 │   └── traductions.js  Textes en anglais et en indonésien
 ├── cv/                 Sources HTML des CV (FR, EN, ID) qui servent à générer les PDF
-└── assets/             Images et CV en PDF
+├── assets/             Images et CV en PDF
+└── captures/           Captures d'écran de ce README
 ```
 
 ## Lancer le site en local
