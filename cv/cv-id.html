@@ -3,408 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <title>CV · Alison Faidherbe</title>
-  <!-- Version indonésienne du CV (même mise en page que cv.html).
-       Le PDF est généré à partir de cette page : assets/CV_Alison_Faidherbe_web_id.pdf -->
+  <!-- Fichier généré par cv/generer-cv.js : modifier le modèle, pas ce fichier.
+       Le PDF est imprimé depuis cette page : assets/CV_Alison_Faidherbe_web_id.pdf -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Open+Sans:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600;700;800&display=swap">
   <style>
     :root {
-      --bleu: #009fbc;
-      --lilas: #e2a9f1;
-      --jaune: #f7eaa3;
-      --texte: #4a4f57;
-      --noir: #1e2227;
+      --creme: #fbf6f3;
+      --rose-clair: #f5d5db;
+      --rose: #c98a95;
+      --marine: #223346;
+      --ardoise: #6c7482;
     }
-
-    @page {
-      size: A4;
-      margin: 0;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: "Open Sans", sans-serif;
-      font-size: 10pt;
-      line-height: 1.45;
-      color: var(--texte);
+      font-family: "Inter", sans-serif;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: var(--ardoise);
+      background: var(--creme);
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
-
-    h1, h2, h3, p, ul, figure {
-      margin: 0;
-    }
-
-    ul {
-      padding: 0;
-      list-style: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    h1, h2, h3, p, ul { margin: 0; }
+    ul { padding: 0; list-style: none; }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       position: relative;
       width: 210mm;
       height: 297mm;
-      display: grid;
-      grid-template-columns: 74mm 1fr;
+      padding: 14mm 14mm 0;
       overflow: hidden;
+      background: var(--creme);
     }
-
-    /* Fond (colonne bleue, bandes lilas) et photo :
-       formes reprises à l'identique du CV d'origine */
-    .fond {
+    /* Grand disque rose en haut à droite */
+    .page::before {
+      content: "";
       position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
+      top: -62mm;
+      left: 146mm;
+      width: 116mm;
+      height: 116mm;
+      border-radius: 50%;
+      background: var(--rose-clair);
     }
 
-    /* ---------- Colonne de gauche ---------- */
-    .cote {
+    /* ---------- En-tête ---------- */
+    .entete {
       position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 6mm;
-      padding: 72mm 7mm 8mm 5mm;
-      color: #fff;
-    }
-
-    .nom {
-      font-size: 17pt;
-      font-weight: 700;
-      color: var(--jaune);
-    }
-
-    .nom strong {
-      color: var(--lilas);
-    }
-
-    .cote h2 {
-      margin-bottom: 2mm;
-      font-size: 13pt;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--lilas);
-    }
-
-    .cote h3 {
-      margin: 2mm 0 1mm;
-      font-size: 8pt;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--jaune);
-    }
-
-    .coordonnees {
       display: grid;
-      gap: 2.5mm;
-      font-size: 9pt;
+      grid-template-columns: 44mm 1fr;
+      column-gap: 9mm;
+      align-items: end;
+      padding-bottom: 5mm;
+      border-bottom: 1px solid var(--rose-clair);
+    }
+    .photo {
+      width: 44mm;
+      height: 54mm;
+      border-radius: 22mm 22mm 4mm 4mm;
+      object-fit: cover;
+      object-position: center 20%;
+    }
+    .prenom {
+      font-family: "Allura", cursive;
+      font-size: 34pt;
+      font-weight: 400;
+      line-height: 0.9;
+      color: var(--rose);
+    }
+    .nom {
+      font-size: 29pt;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      color: var(--marine);
+    }
+    .metier {
+      margin-top: 4mm;
+      font-size: 8.6pt;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--marine);
+    }
+    .accroche {
+      margin-top: 2.5mm;
+      font-size: 9.6pt;
+      line-height: 1.45;
+    }
+    .coordonnees {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm 4.5mm;
+      margin-top: 4mm;
+      font-size: 8.4pt;
+      white-space: nowrap;
+      color: var(--marine);
+    }
+    .coordonnees li { display: flex; align-items: center; gap: 2mm; }
+    .coordonnees svg {
+      width: 4mm; height: 4mm; flex-shrink: 0;
+      fill: none; stroke: var(--rose); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
     }
 
-    .coordonnees li {
+    /* ---------- Corps ---------- */
+    .corps {
+      display: grid;
+      grid-template-columns: 1fr 54mm;
+      column-gap: 9mm;
+      padding-top: 4mm;
+    }
+    .colonne { display: flex; flex-direction: column; gap: 3mm; }
+
+    /* Titres de section manuscrits suivis d'un filet */
+    h2 {
       display: flex;
       align-items: center;
       gap: 3mm;
+      margin-bottom: 2mm;
+      font-family: "Allura", cursive;
+      font-size: 19pt;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--rose);
     }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--rose-clair); }
 
-    .coordonnees svg {
-      width: 4.5mm;
-      height: 4.5mm;
-      flex-shrink: 0;
-      fill: none;
-      stroke: #fff;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
+    .parcours { display: grid; gap: 3.5mm; }
+    .parcours > li { display: grid; grid-template-columns: 29mm 1fr; column-gap: 4mm; }
+    .quand { font-size: 8.6pt; line-height: 1.35; }
+    .quand strong { display: block; font-weight: 700; color: var(--marine); }
+    .quand span { display: block; font-size: 8pt; }
+    .poste { margin-bottom: 0.8mm; font-size: 9.4pt; font-weight: 700; color: var(--marine); }
 
-    .liste {
-      display: grid;
-      gap: 0.8mm;
-    }
-
-    .etiquettes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5mm;
-    }
-
-    .etiquettes li {
-      padding: 0.6mm 2.5mm;
-      border-radius: 10mm;
-      font-size: 8.5pt;
-      font-weight: 600;
-      color: var(--bleu);
-      background: #fff;
-    }
-
-    /* ---------- Colonne de droite ---------- */
-    .principal {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 4mm;
-      padding: 9mm 10mm 16mm 12mm;
-    }
-
-    .principal h1 {
-      font-size: 21pt;
-      font-weight: 800;
-      line-height: 1.15;
-      letter-spacing: 0.1em;
-      color: var(--bleu);
-    }
-
-    .accroche {
-      margin-top: 1mm;
-      font-weight: 600;
-    }
-
-    .principal h2 {
-      width: fit-content;
-      margin-bottom: 2.5mm;
-      padding: 1mm 5mm;
-      border-radius: 10mm;
-      font-size: 11pt;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #fff;
-      background: var(--bleu);
-    }
-
-    .puces {
-      display: grid;
-      gap: 1.2mm;
-    }
-
-    .puces li {
-      position: relative;
-      padding-left: 4mm;
-    }
-
+    .puces { display: grid; gap: 0.8mm; }
+    .puces li { position: relative; padding-left: 3.5mm; }
     .puces li::before {
-      content: "";
-      position: absolute;
-      top: 0.55em;
-      left: 0.5mm;
-      width: 1.3mm;
-      height: 1.3mm;
-      border-radius: 50%;
-      background: var(--bleu);
+      content: ""; position: absolute; top: 0.55em; left: 0;
+      width: 1.3mm; height: 1.3mm; border-radius: 50%; background: var(--rose);
     }
 
-    .parcours {
-      display: grid;
-      gap: 6.5mm;
-    }
+    .tirets { display: grid; gap: 0.6mm; }
+    .tirets li::before { content: "— "; color: var(--rose); }
 
-    .parcours > li {
-      display: grid;
-      grid-template-columns: 30mm 1fr;
-      column-gap: 4mm;
-    }
-
-    .parcours .quand {
-      font-size: 8.5pt;
-      font-weight: 700;
-      color: var(--noir);
-    }
-
-    .parcours .ou {
-      display: block;
+    .groupe { margin: 1.6mm 0 1mm; font-size: 7.6pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--marine); }
+    .groupe:first-of-type { margin-top: 0; }
+    .etiquettes { display: flex; flex-wrap: wrap; gap: 1.5mm; }
+    .etiquettes li {
+      padding: 0.5mm 2.5mm;
+      border-radius: 10mm;
+      font-size: 8pt;
       font-weight: 600;
-      color: var(--texte);
-    }
-
-    .parcours h3 {
-      margin-bottom: 0.5mm;
-      font-size: 9.5pt;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: var(--noir);
+      color: var(--marine);
+      background: var(--rose-clair);
     }
   </style>
 </head>
 <body>
   <main class="page">
-
-    <!-- Coordonnées reprises du PDF d'origine (page de 2482 × 3510 unités) -->
-    <svg class="fond" viewBox="0 0 2482 3510" role="img" aria-label="Foto Alison Faidherbe">
-      <defs>
-        <clipPath id="forme-photo">
-          <path d="M400.2 119.4V615.7C400.2 641.8 413 666.4 434.6 681.2L824.7 950.6C877.5 987 949.6 949.3 949.6 885.1V119.4C949.6 75.4 913.9 39.9 870.1 39.9H479.7C435.9 39.9 400.2 75.6 400.2 119.4Z"/>
-        </clipPath>
-      </defs>
-      <rect x="0" y="481.2" width="875.4" height="3030" fill="#009fbc"/>
-      <polygon points="-494.3,136.2 617.6,-263.9 862.1,415.6 -249.8,815.7" fill="#e2a9f1"/>
-      <polygon points="994.9,3773.8 2824.6,3282.5 3011.8,3980 1182.2,4471.2" fill="#e2a9f1"/>
-      <image href="../assets/images/photo-cv.jpg" x="400.2" y="39.9" width="549.4" height="925" preserveAspectRatio="xMidYMid slice" clip-path="url(#forme-photo)"/>
-    </svg>
-
-    <aside class="cote">
-
-      <p class="nom">Alison <strong>FAIDHERBE</strong></p>
-
-      <ul class="coordonnees">
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Marseille, Prancis
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <a href="https://www.linkedin.com/in/alliiissonnee">linkedin.com/in/alliiissonnee</a>
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-          <a href="https://github.com/Alliiissonnee">github.com/Alliiissonnee</a>
-        </li>
-      </ul>
-
-      <section>
-        <h2>Kelebihan</h2>
-        <ul class="liste">
-          <li>Mandiri</li>
-          <li>Mampu bekerja dalam tim</li>
-          <li>Teliti</li>
-          <li>Selalu ingin tahu</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Lain-lain</h2>
-        <ul class="liste">
-          <li>Bahasa Inggris: B2</li>
-          <li>SIM Prancis: mobil dan truk</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Keterampilan teknis</h2>
-        <h3>Front-end</h3>
-        <ul class="etiquettes">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-        </ul>
-        <h3>Back-end</h3>
-        <ul class="etiquettes">
-          <li>PHP</li>
-          <li>Node.js</li>
-        </ul>
-        <h3>Basis data</h3>
-        <ul class="etiquettes">
-          <li>MongoDB</li>
-          <li>MySQL</li>
-        </ul>
-        <h3>CMS</h3>
-        <ul class="etiquettes">
-          <li>WordPress</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Minat</h2>
-        <ul class="liste">
-          <li>Lari</li>
-          <li>Bersepeda jalan raya</li>
-          <li>Snowboard</li>
-          <li>Bepergian</li>
-        </ul>
-      </section>
-    </aside>
-
-    <article class="principal">
-      <header>
-        <h1>PENGEMBANG WEB DAN WEB MOBILE</h1>
+    <header class="entete">
+      <img class="photo" src="../assets/images/photo.png" alt="Foto Alison Faidherbe">
+      <div>
+        <h1><span class="prenom">Alison</span><br><span class="nom">FAIDHERBE</span></h1>
+        <p class="metier">Pengembang web dan web mobile</p>
         <p class="accroche">Sedang beralih karier ke pengembangan web, saya akan tersedia mulai Desember 2026 untuk menyumbangkan keterampilan dan motivasi saya bagi proyek-proyek baru.</p>
-      </header>
-
-      <section>
-        <h2>Kompetensi</h2>
-        <ul class="puces">
-          <li>Pemrograman</li>
-          <li>Merancang aplikasi web</li>
-          <li>Memanfaatkan masukan pengguna untuk meningkatkan aplikasi dan sistem</li>
-          <li>Menguji perangkat lunak, sistem informasi, dan aplikasi</li>
+        <ul class="coordonnees">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Marseille, Prancis</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/alliiissonnee">linkedin.com/in/alliiissonnee</a></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg><a href="https://github.com/Alliiissonnee">github.com/Alliiissonnee</a></li>
         </ul>
-      </section>
+      </div>
+    </header>
 
-      <section>
-        <h2>Pengalaman kerja</h2>
-        <ul class="parcours">
-          <li>
-            <p class="quand">2015 - 2026 <span class="ou">Kementerian Angkatan Bersenjata Prancis - Angkatan Darat<br>SUIPPES (51)<br>CANJUERS (83)</span></p>
-            <article>
-              <h3>Pawang anjing militer</h3>
-              <ul class="puces">
-                <li>Melatih dan memantau anjing operasional.</li>
-                <li>Mampu beradaptasi dengan berbagai anjing dan lingkungan.</li>
-              </ul>
-            </article>
-          </li>
-          <li>
-            <p class="quand">2015 <span class="ou">Gendarmerie (polisi militer Prancis)<br>ANNECY (74)</span></p>
-            <article>
-              <h3>Gendarme cadangan</h3>
-              <ul class="puces">
-                <li>Ikut serta dalam misi keamanan dan pencegahan di lapangan.</li>
-                <li>Bekerja dalam tim dengan mematuhi prosedur secara ketat.</li>
-              </ul>
-            </article>
-          </li>
-          <li>
-            <p class="quand">2015 <span class="ou">Supermarket<br>ANNECY (74)</span></p>
-            <article>
-              <h3>Kasir</h3>
-              <ul class="puces">
-                <li>Melayani pelanggan dan menangani pembayaran.</li>
-                <li>Mengembangkan jiwa pelayanan dan hubungan baik dengan pelanggan.</li>
-              </ul>
-            </article>
-          </li>
-        </ul>
-      </section>
+    <div class="corps">
+      <div class="colonne">
+        <section>
+          <h2><span>Pengalaman kerja</span></h2>
+          <ul class="parcours">
+            <li>
+              <p class="quand"><strong>Agustus – Oktober 2026</strong><span>Vaniseo – Agensi web</span><span>MARSEILLE (13)</span></p>
+              <div><h3 class="poste">Magang pengembang web WordPress</h3><ul class="puces"><li>Merancang dan membangun seluruh situs e-commerce Foorthune (WordPress / WooCommerce), dari spesifikasi kebutuhan hingga peluncuran.</li><li>Kustomisasi CSS / PHP (child theme) dan pembuatan mockup toko untuk beberapa klien (Laseris, Hexapol).</li></ul></div>
+            </li>
+            <li>
+              <p class="quand"><strong>2015 – 2026</strong><span>Kementerian Angkatan Bersenjata Prancis – Angkatan Darat</span><span>SUIPPES (51) · CANJUERS (83)</span></p>
+              <div><h3 class="poste">Pawang anjing militer</h3><ul class="puces"><li>Melatih dan memantau anjing operasional.</li><li>Mampu beradaptasi dengan berbagai anjing dan lingkungan.</li></ul></div>
+            </li>
+            <li>
+              <p class="quand"><strong>2015</strong><span>Gendarmerie (polisi militer Prancis)</span><span>ANNECY (74)</span></p>
+              <div><h3 class="poste">Gendarme cadangan</h3><ul class="puces"><li>Ikut serta dalam misi keamanan dan pencegahan di lapangan.</li><li>Bekerja dalam tim dengan mematuhi prosedur secara ketat.</li></ul></div>
+            </li>
+            <li>
+              <p class="quand"><strong>2015</strong><span>Supermarket</span><span>ANNECY (74)</span></p>
+              <div><h3 class="poste">Kasir</h3><ul class="puces"><li>Melayani pelanggan dan menangani pembayaran.</li><li>Mengembangkan jiwa pelayanan dan hubungan baik dengan pelanggan.</li></ul></div>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2><span>Pendidikan dan sertifikasi</span></h2>
+          <ul class="parcours">
+            <li>
+              <p class="quand"><strong>2026</strong><span>FONTENAY-LE-COMTE (85)</span></p>
+              <p>Sertifikasi profesi Prancis tingkat 5 – Pengembang web dan web mobile (sedang berjalan, selesai November 2026).</p>
+            </li>
+            <li>
+              <p class="quand"><strong>2025</strong><span>CANJUERS (83)</span></p>
+              <p>Sertifikat pertolongan pertama tingkat 1 (PSC1).</p>
+            </li>
+            <li>
+              <p class="quand"><strong>2020</strong><span>SUIPPES (51)</span></p>
+              <p>Sertifikat kualifikasi teknis lanjutan: berwenang memimpin tim beranggotakan 9 orang.</p>
+            </li>
+            <li>
+              <p class="quand"><strong>2015</strong><span>SEYNOD (74)</span></p>
+              <p>Ijazah SMA Prancis (Baccalauréat) jurusan Ilmu dan Teknologi Kesehatan dan Sosial.</p>
+            </li>
+          </ul>
+        </section>
+      </div>
 
-      <section>
-        <h2>Pendidikan dan sertifikasi</h2>
-        <ul class="parcours">
-          <li>
-            <p class="quand">2026 <span class="ou">Fontenay-le-Comte (85)</span></p>
-            <p>Sertifikasi profesi Prancis tingkat 5 - Pengembang web dan web mobile (sedang berjalan, selesai November 2026).</p>
-          </li>
-          <li>
-            <p class="quand">2025 <span class="ou">CANJUERS (83)</span></p>
-            <p>Sertifikat pertolongan pertama tingkat 1 (PSC1).</p>
-          </li>
-          <li>
-            <p class="quand">2020 <span class="ou">SUIPPES (51)</span></p>
-            <p>Sertifikat kualifikasi teknis lanjutan: berwenang memimpin tim beranggotakan 9 orang.</p>
-          </li>
-          <li>
-            <p class="quand">2015 <span class="ou">SEYNOD (74)</span></p>
-            <p>Ijazah SMA Prancis (Baccalauréat) jurusan Ilmu dan Teknologi Kesehatan dan Sosial.</p>
-          </li>
-        </ul>
-      </section>
-    </article>
-
+      <aside class="colonne">
+        <section><h2><span>Kompetensi</span></h2><ul class="puces"><li>Pemrograman</li><li>Merancang aplikasi web</li><li>Memanfaatkan masukan pengguna untuk meningkatkan aplikasi dan sistem</li><li>Menguji perangkat lunak, sistem informasi, dan aplikasi</li></ul></section>
+        <section>
+          <h2><span>Teknis</span></h2>
+          <h3 class="groupe">Front-end</h3><ul class="etiquettes"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li></ul>
+          <h3 class="groupe">Back-end</h3><ul class="etiquettes"><li>PHP</li><li>Node.js</li></ul>
+          <h3 class="groupe">Basis data</h3><ul class="etiquettes"><li>MongoDB</li><li>MySQL</li></ul>
+          <h3 class="groupe">CMS</h3><ul class="etiquettes"><li>WordPress</li></ul>
+          <h3 class="groupe">Alat</h3><ul class="etiquettes"><li>Docker</li></ul>
+        </section>
+        <section><h2><span>Kelebihan</span></h2><ul class="tirets"><li>Mandiri</li><li>Mampu bekerja dalam tim</li><li>Teliti</li><li>Selalu ingin tahu</li></ul></section>
+        <section><h2><span>Lain-lain</span></h2><ul class="tirets"><li>Bahasa Inggris: B2</li><li>SIM Prancis: mobil dan truk</li></ul></section>
+        <section><h2><span>Minat</span></h2><ul class="tirets"><li>Lari</li><li>Bersepeda jalan raya</li><li>Snowboard</li><li>Bepergian</li></ul></section>
+      </aside>
+    </div>
   </main>
 </body>
 </html>

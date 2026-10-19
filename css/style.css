@@ -398,7 +398,7 @@ a {
 
 /* Page à propos : carte blanche, 3 colonnes */
 .competences--detail .groupes {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .competences--detail h3 {

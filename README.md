@@ -51,7 +51,7 @@ Le site est disponible en **français, anglais et indonésien**. La langue suit 
 │   ├── theme.js        Applique le mode sombre avant l'affichage de la page
 │   ├── main.js         Traduction, mode sombre, menu, galeries
 │   └── traductions.js  Textes en anglais et en indonésien
-├── cv/                 Sources HTML des CV (FR, EN, ID) qui servent à générer les PDF
+├── cv/                 CV en FR, EN et ID : generer-cv.js crée les 3 pages HTML, imprimées en PDF
 ├── assets/             Images et CV en PDF
 └── captures/           Captures d'écran de ce README
 ```
