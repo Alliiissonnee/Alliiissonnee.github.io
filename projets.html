@@ -9,11 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Inter:wght@400;500;600;700;800&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=2026-10-19-2">
+  <link rel="stylesheet" href="css/style.css?v=2026-11-23-2">
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <script src="js/theme.js?v=2026-10-19-2"></script>
-  <script src="js/traductions.js?v=2026-10-19-2" defer></script>
-  <script src="js/main.js?v=2026-10-19-2" defer></script>
+  <script src="js/theme.js?v=2026-11-23-2"></script>
+  <script src="js/traductions.js?v=2026-11-23-2" defer></script>
+  <script src="js/main.js?v=2026-11-23-2" defer></script>
 </head>
 <body>
 
@@ -22,7 +22,6 @@
     <ul class="langues" aria-label="Langue" data-i18n-attr="aria-label:langues.label">
       <li><button type="button" data-langue="fr" lang="fr" aria-pressed="true" title="Français">FR</button></li>
       <li><button type="button" data-langue="en" lang="en" aria-pressed="false" title="English">EN</button></li>
-      <li><button type="button" data-langue="id" lang="id" aria-pressed="false" title="Bahasa Indonesia">ID</button></li>
     </ul>
     <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
       <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -129,7 +128,10 @@
         <p class="projet__statut" data-i18n="projet.enCours">Projet en cours</p>
         <p class="projet__description" data-i18n="desc.marie">Site vitrine réalisé bénévolement pour une amie, pour présenter ses créations faites main. En HTML, CSS et JavaScript.</p>
         <img class="projet__logo" src="assets/images/vignette-marie.png" alt="">
-        <a class="projet__lien" href="https://github.com/Alliiissonnee/Aux-cr-as-de-Marie" target="_blank" rel="noopener" data-i18n="projet.voir">Voir le projet</a>
+        <p class="projet__liens">
+          <a class="projet__lien" href="https://auxcreasdemarie.fr/" target="_blank" rel="noopener" data-i18n="projet.voirSite">Voir le site</a>
+          <a class="projet__lien" href="https://github.com/Alliiissonnee/Aux-cr-as-de-Marie" target="_blank" rel="noopener" data-i18n="projet.voirCode">Voir le code</a>
+        </p>
       </header>
       <div class="carrousel">
         <ul class="carte carte--rose projet__galerie" aria-label="Captures d'écran de Aux créas de Marie" data-i18n-attr="aria-label:marie.galerie">

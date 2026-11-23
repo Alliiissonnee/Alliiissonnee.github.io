@@ -494,6 +494,15 @@ a {
   line-height: 1.15;
 }
 
+/* Petite ligne au-dessus du titre : « Je recherche une » */
+.presentation__intro {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
 .appel-contact {
   position: relative;
   grid-column: span 2;
@@ -629,6 +638,20 @@ a {
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+/* Plusieurs liens côte à côte (site en ligne + code) */
+.projet__liens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.projet__liens .projet__lien {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .projet--inverse .projet__infos {

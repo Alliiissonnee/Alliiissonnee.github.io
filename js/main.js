@@ -1,7 +1,7 @@
 // ==========================================================
-// Traduction (FR / EN / ID)
+// Traduction (FR / EN)
 // ==========================================================
-const LANGUES = ["fr", "en", "id"];
+const LANGUES = ["fr", "en"];
 let langueActuelle = "fr";
 
 const elementsTexte = document.querySelectorAll("[data-i18n]");

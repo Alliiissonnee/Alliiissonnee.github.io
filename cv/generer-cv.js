@@ -1,4 +1,4 @@
-// Génère les 3 CV (cv.html, cv-en.html, cv-id.html) à partir d'un seul modèle.
+// Génère les 2 CV (cv.html, cv-en.html) à partir d'un seul modèle.
 // Usage : node cv/generer-cv.js   (depuis le dossier du projet)
 // Les PDF (assets/CV_Alison_Faidherbe_web*.pdf) s'impriment ensuite depuis ces pages, un par un.
 const fs = require("fs");
@@ -13,8 +13,8 @@ const ICONES = {
 const CV = {
   fr: {
     fichier: "cv.html", pdf: "CV_Alison_Faidherbe_web.pdf", titre: "CV · Alison Faidherbe", photo: "Photo d'Alison Faidherbe",
-    metier: "Développeur web et web mobile",
-    accroche: "En reconversion dans le développement web, je serai disponible dès décembre 2026 pour mettre mes compétences et ma motivation au service de nouveaux projets.",
+    metier: "En recherche d'alternance · UI/UX design",
+    accroche: "Après ma formation de développeur web et web mobile, terminée en novembre 2026, je recherche une alternance en UI/UX design pour concevoir des interfaces claires, accessibles et pensées pour leurs utilisateurs. Rythme et date de début flexibles, selon l'entreprise.",
     lieu: "Marseille (13)",
     titres: { experiences: "Expériences professionnelles", formations: "Formations et diplômes", competences: "Compétences", technique: "Technique", atouts: "Atouts", divers: "Divers", interets: "Centres d'intérêt" },
     experiences: [
@@ -24,21 +24,21 @@ const CV = {
       { quand: "2015", ou: ["Supermarché", "ANNECY (74)"], poste: "Hôtesse de caisse", puces: ["Accueil et encaissement de la clientèle.", "Développement du sens du service et de la relation client."] },
     ],
     formations: [
-      { quand: "2026", ou: "FONTENAY-LE-COMTE (85)", texte: "Titre professionnel de niveau 5 – Développeur web et web mobile (en cours, fin novembre 2026)." },
+      { quand: "2026", ou: "FONTENAY-LE-COMTE (85)", texte: "Titre professionnel de niveau 5 – Développeur web et web mobile (formation terminée en novembre 2026)." },
       { quand: "2025", ou: "CANJUERS (83)", texte: "Prévention et Secours Civiques de niveau 1 (PSC1)." },
       { quand: "2020", ou: "SUIPPES (51)", texte: "Certificat de qualification technique supérieur : permet de diriger une équipe de 9 personnes." },
       { quand: "2015", ou: "SEYNOD (74)", texte: "Baccalauréat ST2S – Sciences et Technologies de la Santé et du Social." },
     ],
-    competences: ["Coder", "Concevoir une application web", "Prendre en compte les retours utilisateurs afin d'améliorer les applications et systèmes", "Tester un logiciel, un système d'information, une application"],
-    groupes: ["Front-end", "Back-end", "Bases de données", "CMS", "Outils"],
+    competences: ["Maquetter des interfaces web", "Coder", "Concevoir une application web", "Prendre en compte les retours utilisateurs afin d'améliorer les applications et systèmes", "Tester un logiciel, un système d'information, une application"],
+    groupes: ["Front-end", "Back-end", "Bases de données", "CMS", "Design et outils"],
     atouts: ["Autonome", "Travail en équipe", "Rigoureuse", "Curieuse"],
     divers: ["Anglais B2", "Permis B et C"],
     interets: ["Course à pied", "Vélo de route", "Snowboard", "Voyages"],
   },
   en: {
     fichier: "cv-en.html", pdf: "CV_Alison_Faidherbe_web_en.pdf", titre: "Resume · Alison Faidherbe", photo: "Photo of Alison Faidherbe",
-    metier: "Web and mobile web developer",
-    accroche: "Retraining in web development, I will be available from December 2026 to bring my skills and motivation to new projects.",
+    metier: "Seeking an apprenticeship · UI/UX design",
+    accroche: "Having completed my web and mobile web developer training in November 2026, I am looking for an apprenticeship in UI/UX design to create clear, accessible and user-centred interfaces. Flexible schedule and start date, depending on the company.",
     lieu: "Marseille, France",
     titres: { experiences: "Work experience", formations: "Education and qualifications", competences: "Skills", technique: "Technical", atouts: "Strengths", divers: "Other", interets: "Interests" },
     experiences: [
@@ -48,43 +48,19 @@ const CV = {
       { quand: "2015", ou: ["Supermarket", "ANNECY (74)"], poste: "Cashier", puces: ["Welcoming customers and handling payments.", "Developed a strong sense of customer service."] },
     ],
     formations: [
-      { quand: "2026", ou: "FONTENAY-LE-COMTE (85)", texte: "French professional qualification, level 5 – Web and mobile web developer (in progress, ends November 2026)." },
+      { quand: "2026", ou: "FONTENAY-LE-COMTE (85)", texte: "French professional qualification, level 5 – Web and mobile web developer (training completed in November 2026)." },
       { quand: "2025", ou: "CANJUERS (83)", texte: "First aid certificate, level 1 (PSC1)." },
       { quand: "2020", ou: "SUIPPES (51)", texte: "Advanced technical qualification certificate: qualified to lead a team of 9 people." },
       { quand: "2015", ou: "SEYNOD (74)", texte: "French baccalaureate (high school diploma) in Health and Social Sciences and Technologies." },
     ],
-    competences: ["Coding", "Designing a web application", "Using user feedback to improve applications and systems", "Testing software, information systems and applications"],
-    groupes: ["Front-end", "Back-end", "Databases", "CMS", "Tools"],
+    competences: ["Creating web interface mock-ups", "Coding", "Designing a web application", "Using user feedback to improve applications and systems", "Testing software, information systems and applications"],
+    groupes: ["Front-end", "Back-end", "Databases", "CMS", "Design and tools"],
     atouts: ["Independent", "Team player", "Thorough", "Curious"],
     divers: ["English: B2", "Driving licence: car and truck (B, C)"],
     interets: ["Running", "Road cycling", "Snowboarding", "Travel"],
   },
-  id: {
-    fichier: "cv-id.html", pdf: "CV_Alison_Faidherbe_web_id.pdf", titre: "CV · Alison Faidherbe", photo: "Foto Alison Faidherbe",
-    metier: "Pengembang web dan web mobile",
-    accroche: "Sedang beralih karier ke pengembangan web, saya akan tersedia mulai Desember 2026 untuk menyumbangkan keterampilan dan motivasi saya bagi proyek-proyek baru.",
-    lieu: "Marseille, Prancis",
-    titres: { experiences: "Pengalaman kerja", formations: "Pendidikan dan sertifikasi", competences: "Kompetensi", technique: "Teknis", atouts: "Kelebihan", divers: "Lain-lain", interets: "Minat" },
-    experiences: [
-      { quand: "Agustus – Oktober 2026", ou: ["Vaniseo – Agensi web", "MARSEILLE (13)"], poste: "Magang pengembang web WordPress", puces: ["Merancang dan membangun seluruh situs e-commerce Foorthune (WordPress / WooCommerce), dari spesifikasi kebutuhan hingga peluncuran.", "Kustomisasi CSS / PHP (child theme) dan pembuatan mockup toko untuk beberapa klien (Laseris, Hexapol)."] },
-      { quand: "2015 – 2026", ou: ["Kementerian Angkatan Bersenjata Prancis – Angkatan Darat", "SUIPPES (51) · CANJUERS (83)"], poste: "Pawang anjing militer", puces: ["Melatih dan memantau anjing operasional.", "Mampu beradaptasi dengan berbagai anjing dan lingkungan."] },
-      { quand: "2015", ou: ["Gendarmerie (polisi militer Prancis)", "ANNECY (74)"], poste: "Gendarme cadangan", puces: ["Ikut serta dalam misi keamanan dan pencegahan di lapangan.", "Bekerja dalam tim dengan mematuhi prosedur secara ketat."] },
-      { quand: "2015", ou: ["Supermarket", "ANNECY (74)"], poste: "Kasir", puces: ["Melayani pelanggan dan menangani pembayaran.", "Mengembangkan jiwa pelayanan dan hubungan baik dengan pelanggan."] },
-    ],
-    formations: [
-      { quand: "2026", ou: "FONTENAY-LE-COMTE (85)", texte: "Sertifikasi profesi Prancis tingkat 5 – Pengembang web dan web mobile (sedang berjalan, selesai November 2026)." },
-      { quand: "2025", ou: "CANJUERS (83)", texte: "Sertifikat pertolongan pertama tingkat 1 (PSC1)." },
-      { quand: "2020", ou: "SUIPPES (51)", texte: "Sertifikat kualifikasi teknis lanjutan: berwenang memimpin tim beranggotakan 9 orang." },
-      { quand: "2015", ou: "SEYNOD (74)", texte: "Ijazah SMA Prancis (Baccalauréat) jurusan Ilmu dan Teknologi Kesehatan dan Sosial." },
-    ],
-    competences: ["Pemrograman", "Merancang aplikasi web", "Memanfaatkan masukan pengguna untuk meningkatkan aplikasi dan sistem", "Menguji perangkat lunak, sistem informasi, dan aplikasi"],
-    groupes: ["Front-end", "Back-end", "Basis data", "CMS", "Alat"],
-    atouts: ["Mandiri", "Mampu bekerja dalam tim", "Teliti", "Selalu ingin tahu"],
-    divers: ["Bahasa Inggris: B2", "SIM Prancis: mobil dan truk"],
-    interets: ["Lari", "Bersepeda jalan raya", "Snowboard", "Bepergian"],
-  },
 };
-const TECHNO = [["HTML", "CSS", "JavaScript", "React"], ["PHP", "Node.js"], ["MongoDB", "MySQL"], ["WordPress"], ["Docker"]];
+const TECHNO = [["HTML", "CSS", "JavaScript", "React"], ["PHP", "Node.js"], ["MongoDB", "MySQL"], ["WordPress"], ["Figma", "Docker"]];
 
 const e = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const icone = (n) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONES[n]}</svg>`;
