@@ -640,6 +640,11 @@ a {
   text-underline-offset: 4px;
 }
 
+/* Mot à ne pas couper en fin de ligne (ex : « e-commerce ») */
+.insecable {
+  white-space: nowrap;
+}
+
 /* Plusieurs liens côte à côte (site en ligne + code) */
 .projet__liens {
   display: flex;

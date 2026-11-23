@@ -23,7 +23,8 @@ Le site est disponible en **français et en anglais**. La langue suit celle du n
 | ECF – Ma Bibliothèque | Projet de formation | HTML, CSS, JavaScript | [Code](https://github.com/Alliiissonnee/ECF) |
 | I lost my Cabron | Projet de groupe | React, Node.js, Express, MongoDB, Supabase | [Code](https://github.com/wall966/iLostMyCabron) |
 | Floppy Perroquet | Projet de formation | JavaScript | [Jouer](https://alliiissonnee.github.io/Floppy-Perroquet-/) |
-| Aux créas de Marie | Projet personnel | HTML, CSS, JavaScript | [auxcreasdemarie.fr](https://auxcreasdemarie.fr/) · [Code](https://github.com/Alliiissonnee/Aux-cr-as-de-Marie) |
+| Aux créas de Marie – site vitrine | Projet personnel, réalisé pour une amie | HTML, CSS, JavaScript | [auxcreasdemarie.fr](https://auxcreasdemarie.fr/) |
+| Aux créas de Marie – version e-commerce | Projet de fin de formation DWWM | HTML, CSS, JavaScript, PHP, MySQL, Stripe (mode test) | [Code](https://github.com/Alliiissonnee/Aux-cr-as-de-Marie) |
 
 ## Aperçu
 
